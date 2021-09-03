@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sales</h1>
+
+<br>
+<div class="container">
+<div class="row">
+<div class="col-6">
+<h3>Monthly sales</h3>
+<%= column_chart @sales_all %>
+</div>
+<div class="col-6">
+<h3>Monthly sales amount</h3>
+<%= column_chart @sales_amount_month %>
+</div>
+<h3>Average monthly sales</h3>
+<%= column_chart @sales_average, colors: ["#8E44AD"] %>
+</div>
+<br>
+<br>
+<h3>Number of sales according to the origin of the coffee</h3>
+<br>
+<h4>Last 12 months</h4>
+<%= pie_chart @sales_amount12, width: "1100px", height: "800px" %>
+<h4>Last 6 months</h4>
+<%= pie_chart @sales_amount6, width: "1100px", height: "700px" %>
+<h4>Last 3 months</h4>
+<%= pie_chart @sales_amount3, width: "1100px", height: "600px" %>
+<h4>Last month</h4>
+<%= pie_chart @sales_amount1, width: "1100px", height: "500px" %>
+<br>
+<h3>Sales quantity according to the name of the coffee blend</h3>
+<br>
+<h4>Last 12 months</h4>
+<%= pie_chart @sales_blend_coffee12, width: "1100px", height: "1300px" %>
+<h4>Last 6 months</h4>
+<%= pie_chart @sales_blend_coffee6, width: "1100px", height: "900px" %>
+<h4>Last 3 months</h4>
+<%= pie_chart @sales_blend_coffee3, width: "1100px", height: "620px" %>
+<h4>Last month</h4>
+<%= pie_chart @sales_blend_coffee1, width: "1100px", height: "480px" %>
+</div>
+
+
+<%= link_to 'New Sale', new_sale_path %>
